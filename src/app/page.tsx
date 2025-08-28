@@ -19,8 +19,7 @@ export default function Home() {
         </section>
         <section id="about" className="bg-glass p-8">
           <SplitAbout
-            heading="About the Artist"
-            body="As a photographer, I capture the stories behind our world—each frame a narrative, each click a moment frozen in time."
+            description="As a photographer, I capture the stories behind our world—each frame a narrative, each click a moment frozen in time."
           />
         </section>
         <section id="portfolio" className="bg-[#0a0a0a] p-8">
@@ -35,11 +34,11 @@ export default function Home() {
         </section>
         <section id="process" className="bg-[#0a0a0a] text-white p-8">
           <HowToBuy3D
-            heading="Our Process"
-            items={[
-              { title: "Shoot", description: "Capturing the moment", image: "/images/placeholder5.avif" },
-              { title: "Edit", description: "Bringing life to the frame", image: "/images/placeholder6.avif" },
-              { title: "Deliver", description: "Presenting the final masterpiece", image: "/images/placeholder7.avif" }
+            title="Our Process"
+            steps={[
+              { title: "Shoot", description: "Capturing the moment", image: "/images/placeholder5.avif", position: "left", isCenter: false },
+              { title: "Edit", description: "Bringing life to the frame", image: "/images/placeholder6.avif", position: "center", isCenter: true },
+              { title: "Deliver", description: "Presenting the final masterpiece", image: "/images/placeholder7.avif", position: "right", isCenter: false }
             ]}
           />
         </section>
