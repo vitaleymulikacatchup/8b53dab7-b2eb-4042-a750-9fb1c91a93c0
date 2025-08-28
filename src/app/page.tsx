@@ -1,2 +1,65 @@
-"use client"\nimport { SiteThemeProvider } from '@/components/sections/ThemeProvider';\nimport BillboardHero from '@/components/sections/layouts/hero/BillboardHero';\nimport SplitAbout from '@/components/sections/layouts/about/SplitAbout';\nimport BentoMediaGallery from '@/components/bento/BentoMediaGallery/BentoMediaGallery';\nimport HowToBuy3D from '@/components/sections/layouts/howtobuy/3DHTB';\nimport TestimonialsSection from '@/components/sections/layouts/faq/CentralFAQ';\nimport { ButtonHoverBubble } from '@/components/buttons/ButtonHoverBubble';\nimport TimelineHorizontal from '@/components/timelines/TimelineHorizontal';\n
-export default function Home() {\n  return (\n    <SiteThemeProvider theme={{ styleVariant: 'futuristicAndOutOfBox', colorTemplate: 2, textAnimation: 'none' }}>\n      <div className="bg-gradient-to-br from-[#040509] to-[#0a0a12]">\n        <section id="hero" className="relative">\n          <BillboardHero\n            title="Showcasing Tomorrow’s Moments"\n            subtitle="Experience the art of photography with a modern edge."\n          />\n        </section>\n        <section id="about" className="bg-glass p-8">\n          <SplitAbout\n            heading="About the Artist"\n            body="As a photographer, I capture the stories behind our world—each frame a narrative, each click a moment frozen in time."\n          />\n        </section>\n        <section id="portfolio" className="bg-[#0a0a0a] p-8">\n          <BentoMediaGallery\n            items={[\n              { title: "Urban", image: "/images/placeholder1.avif" },\n              { title: "Portrait", image: "/images/placeholder2.avif" },\n              // ...more items\n            ]}\n          />\n        </section>\n        <section id="process" className="bg-[#0a0a0a] text-white p-8">\n          <HowToBuy3D\n            heading="Our Process"\n            items={[\n              { title: "Shoot", description: "Capturing the moment", image: "/images/placeholder3.avif" },\n              { title: "Edit", description: "Bringing life to the frame", image: "/images/placeholder4.avif" },\n              { title: "Deliver", description: "Presenting the final masterpiece", image: "/images/placeholder5.avif" }\n            ]}\n          />\n        </section>\n        <section id="testimonials" className="bg-pattern text-black p-8">\n          <TestimonialsSection\n            items={[\n              { title: "Client A", content: "Incredible work! Couldn’t be happier.", key: "1" },\n              { title: "Client B", content: "Amazing experience from start to finish!", key: "2" },\n            ]}\n          />\n        </section>\n        <section id="contact" className="bg-[#0a0a0a] p-8">\n          <form className="flex flex-col gap-4">\n            <input type="text" placeholder="Name" className="border p-2 rounded" required />\n            <input type="email" placeholder="Email" className="border p-2 rounded" required />\n            <textarea placeholder="Message" className="border p-2 rounded" required></textarea>\n            <ButtonHoverBubble text="Send Inquiry" onClick={() => alert('Inquiry sent!')} className="mt-4" />\n          </form>\n        </section>\n      </div>\n    </SiteThemeProvider>\n  );\n}
+"use client"
+import { SiteThemeProvider } from '@/components/sections/ThemeProvider';
+import BillboardHero from '@/components/sections/layouts/hero/BillboardHero';
+import SplitAbout from '@/components/sections/layouts/about/SplitAbout';
+import BentoMediaGallery from '@/components/bento/BentoMediaGallery/BentoMediaGallery';
+import HowToBuy3D from '@/components/sections/layouts/howtobuy/3DHTB';
+import CentralFAQ from '@/components/sections/layouts/faq/CentralFAQ';
+import ButtonHoverBubble from '@/components/buttons/ButtonHoverBubble';
+
+export default function Home() {
+  return (
+    <SiteThemeProvider theme={{ styleVariant: 'futuristicAndOutOfBox', colorTemplate: 2, textAnimation: 'none' }}>
+      <div className="bg-gradient-to-br from-[#040509] to-[#0a0a12]">
+        <section id="hero" className="relative">
+          <BillboardHero
+            title="Showcasing Tomorrow’s Moments"
+            subtitle="Experience the art of photography with a modern edge."
+          />
+        </section>
+        <section id="about" className="bg-glass p-8">
+          <SplitAbout
+            heading="About the Artist"
+            body="As a photographer, I capture the stories behind our world—each frame a narrative, each click a moment frozen in time."
+          />
+        </section>
+        <section id="portfolio" className="bg-[#0a0a0a] p-8">
+          <BentoMediaGallery
+            items={[
+              { title: "Urban", image: "/images/placeholder1.avif" },
+              { title: "Portrait", image: "/images/placeholder2.avif" },
+              { title: "Event", image: "/images/placeholder3.avif" },
+              { title: "Nature", image: "/images/placeholder4.avif" },
+            ]}
+          />
+        </section>
+        <section id="process" className="bg-[#0a0a0a] text-white p-8">
+          <HowToBuy3D
+            heading="Our Process"
+            items={[
+              { title: "Shoot", description: "Capturing the moment", image: "/images/placeholder5.avif" },
+              { title: "Edit", description: "Bringing life to the frame", image: "/images/placeholder6.avif" },
+              { title: "Deliver", description: "Presenting the final masterpiece", image: "/images/placeholder7.avif" }
+            ]}
+          />
+        </section>
+        <section id="testimonials" className="bg-pattern text-black p-8">
+          <CentralFAQ
+            items={[
+              { title: "Client A", content: "Incredible work! Couldn’t be happier." },
+              { title: "Client B", content: "Amazing experience from start to finish!" },
+            ]}
+          />
+        </section>
+        <section id="contact" className="bg-[#0a0a0a] p-8">
+          <form className="flex flex-col gap-4">
+            <input type="text" placeholder="Name" className="border p-2 rounded" required />
+            <input type="email" placeholder="Email" className="border p-2 rounded" required />
+            <textarea placeholder="Message" className="border p-2 rounded" required></textarea>
+            <ButtonHoverBubble text="Send Inquiry" onClick={() => alert('Inquiry sent!')} className="mt-4" />
+          </form>
+        </section>
+      </div>
+    </SiteThemeProvider>
+  );
+}
